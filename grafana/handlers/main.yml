@@ -1,0 +1,6 @@
+---
+# handlers file for grafana
+- name: restart "{{ service }}"
+  service:
+    name: "{{ service }}-server"
+    state: restarted

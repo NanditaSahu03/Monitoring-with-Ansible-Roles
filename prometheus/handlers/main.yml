@@ -1,0 +1,6 @@
+---
+# handlers file for prometheus
+- name: restart prometheus 
+  service:
+    name: "{{ service }}"
+    state: restarted

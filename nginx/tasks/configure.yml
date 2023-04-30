@@ -1,0 +1,5 @@
+---
+- name: Configure Nginx
+  template:
+    src: ../files/nginx.conf
+    dest: /etc/nginx/nginx.conf

@@ -1,0 +1,10 @@
+---
+- name: Ansible Playbook for Prometheus Grafana and Nginx Reverse Proxy
+  hosts: server
+  become: true
+  roles:
+   - prometheus
+   - grafana
+   - nginx
+
+

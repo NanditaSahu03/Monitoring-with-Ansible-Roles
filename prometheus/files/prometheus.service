@@ -1,0 +1,19 @@
+[Unit]
+Description=Prometheus Server
+Documentation=https://prometheus.io/docs/introduction/overview/
+After=network-online.target
+
+[Service]
+User=prometheus
+Group=prometheus
+Restart=on-failure
+ExecStart=/opt/prometheus/prometheus \
+  --config.file=/opt/prometheus/prometheus.yml \
+  --storage.tsdb.path=/opt/prometheus/data \
+  --storage.tsdb.retention.time=30d \
+  --web.route-prefix=/prometheus \
+  --web.external-url=/prometheus
+
+
+[Install]
+WantedBy=multi-user.target

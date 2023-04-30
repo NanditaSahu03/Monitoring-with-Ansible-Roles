@@ -1,0 +1,8 @@
+---
+- name: Reload Nginx Service
+  service:
+    name: "{{ service }}"
+    state: reloaded
+    
+  notify:
+    - reload "{{ service }}"
